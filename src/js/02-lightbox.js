@@ -15,7 +15,7 @@ let items = galleryItems.map((item) => {
 });
 refs.galleryEl.innerHTML = items.join("");
 
-// открыть модалку
+// открыть модал
 refs.galleryEl.addEventListener("click", onModalClick);
 
 function onModalClick(event) {
