@@ -3,7 +3,6 @@ import { galleryItems } from "./gallery-items.js";
 
 const refs = {
   galleryEl: document.querySelector(".gallery"),
-  itemsEl: document.querySelector(".gallery__image"),
 };
 
 let items = galleryItems.map((item) => {
@@ -21,6 +20,9 @@ refs.galleryEl.addEventListener("click", onModalClick);
 function onModalClick(event) {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") return;
-  let gallery = new SimpleLightbox(".gallery__item");
+  let gallery = new SimpleLightbox(".gallery__item", {
+    captionsData: "alt",
+    captionsDelay: 250,
+  });
   gallery.on("show.simplelightbox", function () {});
 }
